@@ -27,11 +27,8 @@ test.describe('изменение имени', () => {
 
         await mainPage.gotoRegister()
         await reqisterPage.Register(user);
-
-        await mainPage.dropDownButton.click();
-        await mainPage.settingsButton.click();
-        await settingsPage.userName.fill(editSettings.name);
-        await settingsPage.upDateSettingsButtom.click();
+        await mainPage.gotoSettings()
+        await settingsPage.editUserName(editSettings);
         await expect(mainPage.dropDownButton).toContainText(editSettings.name);
 
 

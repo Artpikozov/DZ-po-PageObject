@@ -33,9 +33,10 @@ test.describe('Комментарий', () => {
 
         await mainPage.gotoRegister()
         await reqisterPage.Register(user);
-        await mainPage.newArticle.click();
+        await mainPage.gotoArtcle();
         await addArticlePage.addArticle(articleAttribute);
         await articlePage.addComment(COMMENT);
+        await expect(articlePage.cardText).toContainText(COMMENT.text)
         //await expect(articlePage.cardText).toContainText(COMMENT.comment)
 
     });

@@ -29,7 +29,7 @@ test.describe('статья', () => {
 
         await mainPage.gotoRegister()
         await reqisterPage.Register(user);
-        await mainPage.newArticle.click();
+        await mainPage.gotoArtcle();
         await addArticlePage.addArticle(articleAttribute);
         await expect(articlePage.banner).toContainText(articleAttribute.title);
     });

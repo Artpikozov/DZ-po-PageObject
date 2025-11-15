@@ -16,5 +16,20 @@ export class MainPage{
     async gotoRegister(){
         await  this.signUpButton.click();
     }
+    async gotoArtcle(){
+        await this.newArticle.click();
+    }
+    async gotoSettings(){
+        await this.dropDownUser.click();
+        await this.settingsButton.click();
+    }
+    async logOut(){
+        await this.dropDownButton.click();
+        await this.logOutButton.click();
+    }
+    async gotoLogin(){
+        await this.loginButton.click();
+
+    }
 
 }

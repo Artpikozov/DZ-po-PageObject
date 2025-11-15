@@ -37,9 +37,9 @@ test.describe('Артикул', () => {
 
         await mainPage.gotoRegister()
         await reqisterPage.Register(user);
-        await mainPage.newArticle.click();
+        await mainPage.gotoArtcle();
         await addArticlePage.addArticle(articleAttribute);
-        await articlePage.editArticleButtonActios.click();
+        await articlePage.gotoEditArticle();
         await addArticlePage.editArticle(editArticleAttribute);
         await expect(articlePage.banner).toContainText(editArticleAttribute.title);
 

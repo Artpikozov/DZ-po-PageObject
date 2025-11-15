@@ -28,14 +28,10 @@ test.describe('изменение пароля', () => {
 
         await mainPage.gotoRegister()
         await reqisterPage.Register(user);
-
-        await mainPage.dropDownButton.click();
-        await mainPage.settingsButton.click();
-        await settingPage.password.fill(password.pass);
-        await settingPage.upDateSettingsButtom.click();
-        await mainPage.dropDownButton.click();
-        await mainPage.logOutButton.click();
-        await mainPage.loginButton.click();
+        await mainPage.gotoSettings()
+        await settingPage.editPassword(password)
+        await mainPage.logOut()
+        await mainPage.gotoLogin()
         await loginPage.authorization(user, password);
         await expect(mainPage.dropDownUser).toContainText(user.name);
 

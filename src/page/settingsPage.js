@@ -6,4 +6,15 @@ export class SettingsPage{
 
     }
 
+    async editPassword(password){
+        const {pass} = password;
+        await this.password.fill(pass)
+        await this.upDateSettingsButtom.click();
+    }
+    async editUserName(settings){
+        const {name} = settings;
+        await this.userName.fill(name);
+        await this.upDateSettingsButtom.click();
+    }
+
 }

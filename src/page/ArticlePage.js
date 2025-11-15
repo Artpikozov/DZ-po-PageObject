@@ -5,7 +5,7 @@ export class ArticlePage {
         this.editArticleButtonBanner = page.getByRole('button',{name: "Edit Article"}).first();
         this.editArticleButtonActios = page.getByRole('button',{name: "Edit Article"}).nth(1);
         this.commentInput = page.getByRole('textbox',{name: "Write a comment..."});
-        this.cardText = page.getByRole('.card-text');
+        this.cardText = page.locator('.card-text');
         this.postcommentButton = page.getByRole('button',{name: "Post comment"});
 
     }
@@ -14,5 +14,8 @@ export class ArticlePage {
         await this.commentInput.fill(text);
         await this.postcommentButton.click();
 
+    }
+    async gotoEditArticle(){
+        await this.editArticleButtonActios.click();
     }
 }
